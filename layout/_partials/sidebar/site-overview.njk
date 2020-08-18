@@ -73,6 +73,10 @@
   </div>
 {%- endif %}
 
+{%- if theme.follow_me %}
+  {{ partial('_partials/post/post-followme.njk', {}, {cache: theme.cache.enable}) }}
+{%- endif %}
+
 {%- if theme.creative_commons.license and theme.creative_commons.sidebar %}
   <div class="cc-license site-overview-item animated" itemprop="license">
     {%- set ccImage = '<img src="' + theme.vendors.creative_commons.url + '" alt="Creative Commons">' %}
