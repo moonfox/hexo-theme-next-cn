@@ -18,6 +18,12 @@
     <i class="{{ theme.footer.icon.name }}"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright or author }}</span>
+  {%- if theme.cnzz_siteid %}
+  <span class="with-love">
+    <i class="fa fa-chart-bar"></i>
+  </span>
+  <span itemprop="cnzz"><script type="text/javascript" src="{{ theme.cnzz_siteid }}"></script></span>
+  {%- endif %}
 </div>
 
 {%- if config.symbols_count_time.total_symbols or config.symbols_count_time.total_time %}
