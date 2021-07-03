@@ -125,6 +125,15 @@
           </div>
         {%- endif %}
 
+        {%- if post.categories and post.categories.length %}
+          {%- set cat_indicate = '<i class="fa fa-folder"></i>' if theme.category_icon else '#' %}
+          <div class="post-tags">
+            {%- for cat in post.categories.toArray() %}
+              <a href="{{ url_for(cat.path) }}" rel="category">{{ cat_indicate }} {{ cat.name }}</a>
+            {%- endfor %}
+          </div>
+        {%- endif %}
+
         {{ partial('_partials/post/post-footer.njk', {}, {cache: theme.cache.enable}) }}
 
         {%- if theme.post_navigation and (post.prev or post.next) %}
